@@ -1,0 +1,92 @@
+<div class="bookshelf">
+          <h2>Currently Reading</h2>
+         <hr>
+         <div class="main-div">
+            <ol class="books-list">
+                <div ng-repeat="book in books">
+                    <li ng-if="book.status == 'currentlyReading'">
+                        <div class="frame">
+                        <div class="top">
+                        <div class="photo"  style="background-image: url({{book.image}})" alt="book cover"></div>
+                        <div class="status">
+                            <select ng-model="book.status" ng-change="updateStatus(book)">
+                              <option  disabled>Move to...</option>
+                              <option value="currentlyReading">Currently Reading</option>
+                              <option value="wantToRead">Want to Read</option>
+                              <option value="read">Read</option>
+                              <option value="none">None</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="title">{{book.title}}</div>
+                        <div class="author">{{book.author}}</div>
+                      </div>
+                      </li>
+                </div>
+              </ol>
+         </div>
+        
+        
+           <h2>Want to Read</h2>
+           <hr>
+           <div class="main-div">
+              <ol class="books-list">
+                  <div ng-repeat="book in books">
+                      <li ng-if="book.status == 'wantToRead'">
+                          <div class="frame">
+                          <div class="top">
+                          <div class="photo"  style="background-image: url({{book.image}})" alt="book cover"></div>
+                          <div class="status">
+                              <select ng-model="book.status" ng-change="updateStatus(book)">
+                                <option  disabled>Move to...</option>
+                                <option value="currentlyReading">Currently Reading</option>
+                                <option value="wantToRead">Want to Read</option>
+                                <option value="read">Read</option>
+                                <option value="none">None</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="title">{{book.title}}</div>
+                          <div class="author">{{book.author}}</div>
+                        </div>
+                        </li>
+                  </div>
+                </ol>
+           </div>
+
+
+
+
+           <h2>Read</h2>
+           <hr>
+           <div class="main-div">
+              <ol class="books-list">
+                  <div ng-repeat="book in books">
+                      <li ng-if="book.status == 'read'">
+                          <div class="frame">
+                          <div class="top">
+                          <div class="photo"  style="background-image: url({{book.image}})" alt="book cover"></div>
+                          <div class="status">
+                              <select ng-model="book.status" ng-change="updateStatus(book)">
+                                <option  disabled>Move to...</option>
+                                <option value="currentlyReading">Currently Reading</option>
+                                <option value="wantToRead">Want to Read</option>
+                                <option value="read">Read</option>
+                                <option value="none">None</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="title">{{book.title}}</div>
+                          <div class="author">{{book.author}}</div>
+                        </div>
+                        </li>
+                  </div>
+                </ol>
+           </div>
+     
+    </div>
+
+
+      <div class="goto-search">
+         <a href="#!search"></a>
+        </div>

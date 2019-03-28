@@ -1,0 +1,30 @@
+<div class="search-bar">
+                    <a href="#" class="go-back"></a>
+                    <input type="text"   ng-model="search" placeholder="SearchBook">   
+                </div>
+ <h2 >Want to Read</h2>
+        <hr>
+        <div class="main-div">
+           <ol class="books-list">
+               <div ng-repeat="book in books|filter:search">
+                   <li ng-if="book.status == 'none'">
+                       <div class="frame">
+                       <div class="top">
+                       <div class="photo"  style="background-image: url({{book.image}})" alt="book cover"></div>
+                       <div class="status">
+                           <select ng-model="book.status" ng-change="updateStatus(book)">
+                             <option disabled>Move to...</option>
+                             <option value="currentlyReading">Currently Reading</option>
+                             <option value="wantToRead">Want to Read</option>
+                             <option value="read">Read</option>
+                             <option value="none">None</option>
+                           </select>
+                         </div>
+                       </div>
+                       <div class="title">{{book.title}}</div>
+                       <div class="author">{{book.author}}</div>
+                     </div>
+                     </li>
+               </div>
+             </ol>
+        </div>
