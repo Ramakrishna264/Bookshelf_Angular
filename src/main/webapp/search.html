@@ -7,17 +7,17 @@
         <div class="main-div">
            <ol class="books-list">
                <div ng-repeat="book in books|filter:search">
-                   <li ng-if="book.status == 'none'">
+                   <li ng-if="book.status == 'NONE'">
                        <div class="frame">
                        <div class="top">
                        <div class="photo"  style="background-image: url({{book.image}})" alt="book cover"></div>
                        <div class="status">
                            <select ng-model="book.status" ng-change="updateStatus(book)">
                              <option disabled>Move to...</option>
-                             <option value="currentlyReading">Currently Reading</option>
-                             <option value="wantToRead">Want to Read</option>
-                             <option value="read">Read</option>
-                             <option value="none">None</option>
+                             <option value="CURRENTLY_READING">Currently Reading</option>
+                             <option value="WANT_TO_READ">Want to Read</option>
+                             <option value="READ">Read</option>
+                             <option value="NONE">None</option>
                            </select>
                          </div>
                        </div>
