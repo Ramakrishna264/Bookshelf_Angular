@@ -1,24 +1,26 @@
 <div class="bookshelf">
-          <h2>Currently Reading</h2>
+          <h2>Currently Reading({{cur_read}})</h2>
          <hr>
          <div class="main-div">
             <ol class="books-list">
                 <div ng-repeat="book in books">
-                    <li ng-if="book.status == 'currentlyReading'">
+                    <li ng-if="book.status == 'CURRENTLY_READING'" >
                         <div class="frame">
                         <div class="top">
                         <div class="photo"  style="background-image: url({{book.image}})" alt="book cover"></div>
+                        <div class="delete" ng-click="deleteBook(book)">
+                          </div>
                         <div class="status">
                             <select ng-model="book.status" ng-change="updateStatus(book)">
-                              <option  disabled>Move to...</option>
-                              <option value="currentlyReading">Currently Reading</option>
-                              <option value="wantToRead">Want to Read</option>
-                              <option value="read">Read</option>
-                              <option value="none">None</option>
+                              <option disabled>Move to...</option>
+                              <option value="CURRENTLY_READING">Currently Reading</option>
+                              <option value="WANT_TO_READ">Want to Read</option>
+                              <option value="READ">Read</option>
+                              <option value="NONE">None</option>
                             </select>
                           </div>
                         </div>
-                        <div class="title">{{book.title}}</div>
+                       <div class="title">{{book.title}}</div>
                         <div class="author">{{book.author}}</div>
                       </div>
                       </li>
@@ -27,24 +29,26 @@
          </div>
         
         
-           <h2>Want to Read</h2>
+           <h2>Want to Read({{want_read}})</h2>
            <hr>
            <div class="main-div">
               <ol class="books-list">
                   <div ng-repeat="book in books">
-                      <li ng-if="book.status == 'wantToRead'">
+                      <li ng-if="book.status == 'WANT_TO_READ'" > 
                           <div class="frame">
                           <div class="top">
                           <div class="photo"  style="background-image: url({{book.image}})" alt="book cover"></div>
                           <div class="status">
                               <select ng-model="book.status" ng-change="updateStatus(book)">
-                                <option  disabled>Move to...</option>
-                                <option value="currentlyReading">Currently Reading</option>
-                                <option value="wantToRead">Want to Read</option>
-                                <option value="read">Read</option>
-                                <option value="none">None</option>
+                                <option disabled>Move to...</option>
+                             <option value="CURRENTLY_READING">Currently Reading</option>
+                             <option value="WANT_TO_READ">Want to Read</option>
+                             <option value="READ">Read</option>
+                             <option value="NONE">None</option>
                               </select>
                             </div>
+                            <div class="delete"  ng-click="deleteBook(book)">
+                              </div>
                           </div>
                           <div class="title">{{book.title}}</div>
                           <div class="author">{{book.author}}</div>
@@ -57,24 +61,26 @@
 
 
 
-           <h2>Read</h2>
+           <h2>Read({{read}})</h2>
            <hr>
            <div class="main-div">
               <ol class="books-list">
                   <div ng-repeat="book in books">
-                      <li ng-if="book.status == 'read'">
+                      <li ng-if="book.status == 'READ'">
                           <div class="frame">
                           <div class="top">
                           <div class="photo"  style="background-image: url({{book.image}})" alt="book cover"></div>
                           <div class="status">
                               <select ng-model="book.status" ng-change="updateStatus(book)">
-                                <option  disabled>Move to...</option>
-                                <option value="currentlyReading">Currently Reading</option>
-                                <option value="wantToRead">Want to Read</option>
-                                <option value="read">Read</option>
-                                <option value="none">None</option>
+                                <option disabled>Move to...</option>
+                             <option value="CURRENTLY_READING">Currently Reading</option>
+                             <option value="WANT_TO_READ">Want to Read</option>
+                             <option value="READ">Read</option>
+                             <option value="NONE">None</option>
                               </select>
                             </div>
+                            <div class="delete" ng-click="deleteBook(book)">
+                              </div>
                           </div>
                           <div class="title">{{book.title}}</div>
                           <div class="author">{{book.author}}</div>
